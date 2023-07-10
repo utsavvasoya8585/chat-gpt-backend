@@ -20,6 +20,7 @@ app.use(
 );
 
 app.use("/api/rule", require("./routes/rule.js"));
+app.use("/api/calc", require("./routes/calc.js"));
 app.use("/api/mail", require("./routes/mailer.js"));
 
 app.get("/", (req, res) => {

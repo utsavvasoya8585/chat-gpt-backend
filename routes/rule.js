@@ -68,4 +68,33 @@ router.get("/getrules/:uid", async (req, res) => {
   }
 });
 
+// UPDATE
+router.put(`/update/:id`, async (req, res) => {
+  const id = req.params.id;
+  const ruleUpdate = req.body;
+  const ruleDoc = await Rule.findById(id);
+  // console.log(designDoc.noOfFloor);
+  ruleDoc.set(ruleUpdate);
+  // console.log(designDoc.noOfFloor);
+  try {
+    await ruleDoc.save();
+    res.sendStatus(204);
+  } catch (e) {
+    res.sendStatus(404);
+  }
+  // console.log(designDoc);
+});
+
+// Delete
+router.delete(`/delete/:id`, async (req, res) => {
+  const id = req.params.id;
+  try {
+    // console.log(id);
+    await Rule.deleteOne({ _id: id });
+    res.sendStatus(204);
+  } catch (e) {
+    res.sendStatus(404);
+  }
+});
+
 module.exports = router;
