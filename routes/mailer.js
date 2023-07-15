@@ -15,20 +15,20 @@ router.post("/query", async (req, res) => {
     {
       from: "utsavvasoya99@gmail.com", // Add Mail Hear
       to: "utsavvasoya99@gmail.com", // Add Mail Hear
-      subject: `Contact Me`, // Subject line
+      subject: `Contact Me: Enhancivity`, // Subject line
 
-      text: `Name: ${req.body.name} email:${req.body.email} messaage: ${req.body.message}`, // plain text body
+      text: `Name: ${req.body.fname} email:${req.body.email} messaage: ${req.body.message}`, // plain text body
 
       html: `<p> 
               <h1> Query for: </h1>
               <hr>
-              Name: ${req.body.name}
+              First Name: ${req.body.fname}
               <hr>
-              Number: ${req.body.number}
+              LastNumber: ${req.body.lname}
               <hr> 
               email: ${req.body.email}
               <hr> 
-              Subject: ${req.body.subject}
+              Topic: ${req.body.topic}
               <hr> 
               Message: ${req.body.message}
               <hr>
