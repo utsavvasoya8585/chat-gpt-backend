@@ -15,7 +15,8 @@ app.use(
   cors({
     credentials: true,
     // origin: "http://localhost:3000",
-    origin: "https://chat-gpt-2982b.web.app"
+    // origin: "https://chat-gpt-2982b.web.app",
+    origin: "https://enhanctivity.web.app"
   })
 );
 
