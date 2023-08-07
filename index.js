@@ -3,7 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+
 const app = express();
+const port = process.env.PORT || 8000;
 
 connectToMongo();
 
@@ -29,4 +31,6 @@ app.get("/", (req, res) => {
   res.json("Tested ok!");
 });
 
-app.listen(4000);
+app.listen(port, () => {
+  console.log("server listening on port" + port);
+});
